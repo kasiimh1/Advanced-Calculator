@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Calculator</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+<style>
+    .h11{
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        color: white;
+    }
+    .frmm{
+        font-family: 'Baloo', cursive;
+        height: auto;
+    }  
+    input {
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+        color: white;
+        background: orange;
+        border-radius: 5px;     
+    }    
+    .clearr {
+        width: 409px;
+        height: 100px;
+        font-size: 50px;
+    }
+    .zero {
+        width: 203px;
+        height: 100px;
+        font-size: 50px;
+    }
+    .results {
+        width: 410px;
+        height: 80px;
+        text-align: right;
+        font-size: 60px;
+        background: black;
+        color: white;
+		border-radius: 10px;
+    }
+    .footerrr{
+        color: white;
+        text-align: center;        
+    }
+    </style>
+    </head>    
+<body bgcolor="#333">
+<div class="h11"><h1>Advanced Online Calculator</h1></div>
+<div class="frmm" align="center">
+<form name="frm">
+<input name="result" class="results">
+<br>
+<br>
+<input class="clearr" type="button" name="clear" value="Clear" onclick="runclear()">
+<br>
+<input type="button" name="percent" value="%" onclick="runpercent()">
+<input type="button" name="pi" value="&#960;" onclick="runpi()">
+<input type="button" name="squareroot" value="&radic;" onclick="runsquareroot()">
+<input type="button" name="/" value="&#247;" onclick="rundivide()">
+<br>
+<input type="button" name="7" value="7" onclick="run(7)">
+<input type="button" name="8" value="8" onclick="run(8)">
+<input type="button" name="9" value="9" onclick="run(9)">  
+<input type="button" name="*" value="X" onclick="runmultiply()">
+<br>
+<input type="button" name="4" value="4" onclick="run(4)">
+<input type="button" name="5" value="5" onclick="run(5)">
+<input type="button" name="6" value="6" onclick="run(6)">
+<input type="button" name="-" value="-" onclick="runminus()">
+<br>  
+<input type="button" name="1" value="1" onclick="run(1)">
+<input type="button" name="2" value="2" onclick="run(2)">
+<input type="button" name="3" value="3" onclick="run(3)">
+<input type="button" name="+" value="+" onclick="runplus()">
+<br>
+<input class="zero" type="button" name="0" value="0" onclick="run(0)">
+<input type="button" name="." value="." onclick="rundecimal()">    
+<input type="button" name="=" value="=" onclick="runequal()">     
+<br>
+</form></div><br><br>
+<div class="footerrr">
+    Created By Kasim Hussain 2017<br><br><p>Last Updated Sunday 30th April 15:22PM</p></div>    
+<script type="text/javascript">
+function run(num)
+{
+document.frm.result.value +=num;
+}
+function runplus()
+{
+document.frm.result.value += "+";
+}
+function runminus()
+{
+document.frm.result.value += "-";
+}    
+function runmultiply()
+{
+document.frm.result.value += "*";
+}
+function rundivide()
+{
+document.frm.result.value += "/";
+}
+function runequal()
+{
+var evalo = eval(document.frm.result.value)
+document.frm.result.value = evalo;
+}
+function runclear()    
+{
+document.frm.result.value = "";
+}    
+function rundecimal()
+{
+document.frm.result.value += ".";
+}    
+function runpi()
+    {
+        document.frm.result.value += Math.PI.toFixed(5);
+    }
+function runsquareroot()
+    {
+        var sqrtNum = document.frm.result.value;
+		var result = Math.sqrt(sqrtNum);
+		document.frm.result.value = result;
+    }	
+function runpercent()
+    { 
+document.frm.result.value += "%";
+    }
+</script>
+</body>
+</html>
