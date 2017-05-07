@@ -14,25 +14,33 @@
         font-family: 'Baloo', cursive;
         height: auto;
     }  
-    input {
+    input{
         width: 100px;
         height: 100px;
         font-size: 50px;
         color: white;
-        background: orange;
+        background: #0099ff;
         border-radius: 5px;     
     }    
-    .clearr {
+    .allowit{
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+        color: white;
+        background: red;
+        border-radius: 5px;     
+    }     
+    .clearr{
         width: 409px;
         height: 100px;
         font-size: 50px;
     }
-    .zero {
+    .zero{
         width: 203px;
         height: 100px;
         font-size: 50px;
     }
-    .results {
+    .results{
         width: 410px;
         height: 80px;
         text-align: right;
@@ -64,7 +72,7 @@
 <input type="button" name="7" value="7" onclick="run(7)">
 <input type="button" name="8" value="8" onclick="run(8)">
 <input type="button" name="9" value="9" onclick="run(9)">  
-<input type="button" name="*" value="X" onclick="runmultiply()">
+<input type="button" name="*" value="x" onclick="runmultiply()">
 <br>
 <input type="button" name="4" value="4" onclick="run(4)">
 <input type="button" name="5" value="5" onclick="run(5)">
@@ -78,11 +86,11 @@
 <br>
 <input class="zero" type="button" name="0" value="0" onclick="run(0)">
 <input type="button" name="." value="." onclick="rundecimal()">    
-<input type="button" name="=" value="=" onclick="runequal()">     
+<input class="allowit" type="button" name="=" value="=" onclick="runequal()">     
 <br>
 </form></div><br><br>
 <div class="footerrr">
-    Created By Kasim Hussain 2017<br><br><p>Last Updated Sunday 30th April 15:22PM</p></div>    
+Created By Kasim Hussain 2017<br><br><p>Last Updated Sunday 30th April 15:22PM</p></div>    
 <script type="text/javascript">
 function run(num)
 {
@@ -118,19 +126,21 @@ function rundecimal()
 document.frm.result.value += ".";
 }    
 function runpi()
-    {
-        document.frm.result.value += Math.PI.toFixed(5);
-    }
+{
+document.frm.result.value += Math.PI.toFixed(5);
+}
 function runsquareroot()
-    {
-        var sqrtNum = document.frm.result.value;
-		var result = Math.sqrt(sqrtNum);
-		document.frm.result.value = result;
-    }	
+{
+var sqrtNum = document.frm.result.value;
+var result = Math.sqrt(sqrtNum);
+document.frm.result.value = result;
+}	
 function runpercent()
-    { 
-document.frm.result.value += "%";
-    }
+{
+var ayy = document.frm.result.value;
+var result = ayy / 100;
+document.frm.result.value = result;
+}
 </script>
 </body>
 </html>
